@@ -31,8 +31,8 @@
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
           response = this.responseText;
+           window.history.pushState({ path: href }, "", href);
           _fetcher.root.innerHTML = response;
-          window.history.pushState({ path: href }, "", href);
           _fetcher.init();
         }
       };
