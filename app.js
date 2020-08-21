@@ -1,5 +1,5 @@
 (function (window) {
-  const Fetcher = () => {
+  const BinFetcher = () => {
     let _fetcher = {};
 
     _fetcher.init = () => {
@@ -27,23 +27,22 @@
     };
 
     _fetcher.load = (href) => {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          response = this.responseText;
+
+      fetch(href).then(resp => resp.text()).then(resp =>{
+        console.log(resp);
+          _fetcher.root.innerHTML = resp;
            window.history.pushState({ path: href }, "", href);
-          _fetcher.root.innerHTML = response;
-          _fetcher.init();
-        }
-      };
-      xhttp.open("GET", href, true);
-      xhttp.send();
+           _fetcher.init();
+      }).catch(e => e);
+
+
     };
 
     return _fetcher;
   };
 
   if (typeof window.BinFetcher === "undefined") {
-    window.BinFetcher = Fetcher;
+    window.BinFetcher = BinFetcher;
+    
   }
 })(window);
