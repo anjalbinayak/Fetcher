@@ -29,7 +29,7 @@
     _fetcher.load = (href) => {
 
       fetch(href).then(resp => resp.text()).then(resp =>{
-        console.log(resp);
+        
           _fetcher.root.innerHTML = resp;
            window.history.pushState({ path: href }, "", href);
            _fetcher.init();

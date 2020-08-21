@@ -1,0 +1,23 @@
+{
+  "name": "bin-fetcher",
+  "version": "1.0.0",
+  "description": "SPA library",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anjalbinayak/Fetcher.git"
+  },
+  "keywords": [
+    "spa",
+    "progressive-web-app"
+  ],
+  "author": "Anjal Binayak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anjalbinayak/Fetcher/issues"
+  },
+  "homepage": "https://github.com/anjalbinayak/Fetcher#readme"
+}
